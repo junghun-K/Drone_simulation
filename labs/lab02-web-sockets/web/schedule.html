@@ -1,0 +1,86 @@
+<html>
+    <head>
+        <style>
+            .trip {
+                margin-left:50px;
+            }
+            #popup {
+                padding: 30px;
+                position:absolute; 
+                left: 400px;
+                top: 400px;
+                z-index: 10;
+                background-color: lightblue;
+                border: 1px; 
+                border-style: solid;
+            }
+            .map {
+                position:absolute;
+                cursor:crosshair;
+                left: 100px;
+            }
+        </style>
+		<script src="js/jquery-3.5.1.min.js"></script>
+		<script src="js/WSApi.js"></script>
+        <script>
+			// Web Sockets API for communication with the backend
+			let api = new WSApi();
+
+            var trip=[];
+            $(document).ready(function(){
+                $("#popup").hide();
+                $('#map').click( function(e){
+                    var posX = e.pageX - $(this).offset().left;
+                    var posY = e.pageY - $(this).offset().top;
+                    $("#map").append('<circle cx="'+ posX +'" cy="'+ posY +'" r="10" stroke="green" stroke-width="4" fill="yellow" />');
+                    $("#map").html($("#map").html());
+                    trip.push([posX, posY]);
+                });
+            });
+
+            api.onmessage = function(msg, data) {
+                if ("event" in data) {
+                    console.log(data);
+                    $("#popup").show();
+                    $("#popup").fadeOut(3000);
+                }
+            }
+
+            function schedule() {
+                var name = $("#name").val();
+
+                api.sendCommand("MyCommand", { name: name, number: 0, string: "abc", array: [1,2,3], object: {x:1, y:"2", z:[3]}});
+                api.sendCommand("ScheduleTrip", { name: name, start: trip[0], end: trip[1] });
+
+                var details = name + ": ";
+                for (var i = 0; i < trip.length; i++) {
+                    if (i != 0) {
+                        details += " ---> ";
+                    }
+                    details += "(" + trip[i][0].toFixed(1) + ", " + trip[i][1].toFixed(1) + ")";
+                    
+                }
+                $("#list").append("<p class='trip'>"+details+"</p>");
+
+
+                trip = [];
+                $("#map").html("");
+                $("#name").val("");
+            }
+        </script>
+    </head>
+    <body>
+        <div id="popup"><h2>Your trip is scheduled!</h2></div>
+        <div><h1>Request a Trip:</h1></div>
+        <div style="margin-bottom:20px;">Name: <input id="name" type="Text"></div>
+        <div style="margin-bottom:20px;; width: 1000px; height: 650px;">Select Start / Destination:<br><br>
+            <div><img src="images/umn.png" width="1000" height="600" class="map" >
+                <svg id="map" width="1000" height="600"  class="map" >
+                  </svg>
+                </div>
+
+            <div style="position:absolute; left: 1150px;"><div id="list" style="width: 400px"><p style="font-weight: bold;">Trips:</p></div></div>
+        </div>
+        <div><input type="button" value="Schedule Trip" onclick="schedule()"></div>
+    </body>
+</html>
