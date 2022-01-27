@@ -70,8 +70,10 @@
                 // handles events
                 if ("event" in data) {
                     console.log(data);
-                    $("#popup").show();
-                    $("#popup").fadeOut(3000);
+                    if (data.event == "TripScheduled") {
+                        $("#popup").show();
+                        $("#popup").fadeOut(3000);
+                    }
                 }
             }
 
@@ -79,8 +81,10 @@
             function schedule() {
                 var name = $("#name").val();
 
-                // Send a message to the api (TODO: Update the command and details to schedule a trip):
+                // Example web sockets call to the back-end
                 api.sendCommand("MyCommand", { name: name, number: 0, string: "abc", array: [1,2,3] });
+                // TODO: Call the backend to schedule a trip using the api.sendCommand(...)
+                // TODO: Call the backend to create a new entity using the api.sendCommand(...)
 
                 var details = name + ": ";
                 for (var i = 0; i < trip.length; i++) {

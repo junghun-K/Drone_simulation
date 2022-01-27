@@ -2,6 +2,8 @@
 #include "WebServer.h"
 #include "util/json.h"
 
+//--------------------  Controller Interface ----------------------------
+
 /// Abstract controller class used in the Transit Service.  Uses the Model View Controller Pattern
 class IController {
 public:
@@ -10,6 +12,8 @@ public:
     virtual void SendEventToView(const std::string& event, const JsonObject& details) = 0;
 
 };
+
+//--------------------  Model ----------------------------
 
 /// Simulation Model handling the transit simulation.  The model can communicate with the controller.
 class SimulationModel {
@@ -46,6 +50,9 @@ private:
     IController& controller;
 };
 
+
+//--------------------  Controller ----------------------------
+
 /// A Transit Service that communicates with a web page through web sockets.  It also acts as the controller
 /// in the model view controller pattern.
 class TransitService : public JsonSession, public IController {
@@ -79,19 +86,20 @@ private:
     SimulationModel& model;
 };
 
+
+//--------------------  View / Web Server Code ----------------------------
+
+/// The TransitWebServer holds the simulation and updates sessions.
 class TransitWebServer : public WebServerBase, public IController {
 public:
 	TransitWebServer(int port = 8081, const std::string& webDir = ".") : WebServerBase(port, webDir), model(*this) {}
-
     void SendEventToView(const std::string& event, const JsonObject& details) {
         for (int i = 0; i < sessions.size(); i++) {
             static_cast<TransitService*>(sessions[i])->SendEventToView(event, details);
         }
     }
-
 protected:
 	Session* createSession() { return new TransitService(model); }
-
 private:
     SimulationModel model;
 };
