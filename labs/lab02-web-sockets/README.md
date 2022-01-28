@@ -57,7 +57,7 @@ We recommend using Docker when developing on your own personal machine.  Here ar
   * Linux
     * Use [docker group instead of sudo](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04)
 
-#### Getting Started with Docker
+#### Getting Started with Docker (after cloning the repository)
 
 On Windows use the "Git Bash" terminal.
 
@@ -99,11 +99,43 @@ The [web](https://github.umn.edu/umn-csci-3081-s22/shared-upstream/tree/main/lab
 
 ## Building and Running the program
 
-Now we w
+To build and run the program follow the steps below in one of the approved development environments (Docker / CSE Lab Machines / VOLE / SSH):
 
-### Downloading the repository
+### Download the repository
 
+  Clone the repository to a local folder using git:
+  ```bash
+  % mkdir -p csci3081
+  % cd csci3081
+  % git clone https://github.umn.edu/umn-csci-3081-s22/shared-upstream.git
+  ```
+### Build the application
 
+Change to the lab directory and build using `make`
+  ```bash
+  % cd shared-upstream/lab/lab02-web-sockets
+  % make
+  ```
+  
+This will create a build directory and build the application.  For now you do not need to worry about what is going on in the Makefile.  In future labs we will discuss this in more detail.
+
+### Run the application
+
+From the lab directory, run the program by passing in a port and the web directory to specify the view:
+
+  ```bash
+  % cd shared-upstream/lab/lab02-web-sockets
+  % build/bin/transit_service 8081 web
+  ```
+Run the view by navigating to http://127.0.0.1:8081
+
+You should see a text box and a button.  Type into the box and press the button.  Notice that two things happen:
+ 1. You will see the response under the text box on the view.
+ 2. You will see the command on the command line from the transit_service
+ 
+### Run the schedular
+
+Now navigate to a different view using the same Transit Service API.  Navigate to http://127.0.0.1:8081/schedule.html
 
 ## Done
 
