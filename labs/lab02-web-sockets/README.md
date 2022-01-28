@@ -93,6 +93,18 @@ Notice that we have several classes.  First, we have the [IController](https://g
 
 For example, look at the [ScheduleTrip(...)](https://github.umn.edu/umn-csci-3081-s22/shared-upstream/blob/main/labs/lab02-web-sockets/transit_service.cc#L33) function in the SimulationModel class.  At the end of the function, it sends an event to the view through the controller.  Notice also that inside the [ReceiveCommand(...)](https://github.umn.edu/umn-csci-3081-s22/shared-upstream/blob/main/labs/lab02-web-sockets/transit_service.cc#L63) function in the TransitService, the controller calls functions inside the model.  If we want to add new communication commands we would edit the ReceiveCommand(...) function.
 
+The [web](https://github.umn.edu/umn-csci-3081-s22/shared-upstream/tree/main/labs/lab02-web-sockets/web) folder contains our view:
+ * [index.html](https://github.umn.edu/umn-csci-3081-s22/shared-upstream/blob/main/labs/lab02-web-sockets/web/index.html) - contains a simple view that sends a ping command to the controller and prints the response.
+ * [schedule.html](https://github.umn.edu/umn-csci-3081-s22/shared-upstream/blob/main/labs/lab02-web-sockets/web/schedule.html) - is the result from Lab 01 with additional JQuery commands to handle events from the UI.  Take a look at how click events are wired together with the HTML.
+
+## Building and Running the program
+
+Now we w
+
+### Downloading the repository
+
+
+
 ## Done
 
 THIS LAB IS COMPLETE.
