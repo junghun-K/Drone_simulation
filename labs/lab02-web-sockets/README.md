@@ -143,13 +143,13 @@ This modified view from Lab 01 uses Javascript to interactively schedule trips. 
 
 Your task is to add two new api commands detailed in the `TODO:` comments in schedule.html.  The first command should tell the controller to call the model's ScheduleTrip(...) command.  You will need to edit the JSON in the command so that the trip is scheduled in the model and it is reported in the [api.onmessage(...)](https://github.umn.edu/umn-csci-3081-s22/shared-upstream/blob/main/labs/lab02-web-sockets/web/schedule.html#L69) method.  If done correctly, you will see a blue popup (see original project demo) that says "Your trip is scheduled!"
 
-__Hint:__ Understand how the controller connects to the model in the [ReceiveCommand(...)](https://github.umn.edu/umn-csci-3081-s22/shared-upstream/blob/main/labs/lab02-web-sockets/transit_service.cc#L63) function.
+__Hint:__ Understand how the controller connects to the model in the [ReceiveCommand(...)](https://github.umn.edu/umn-csci-3081-s22/shared-upstream/blob/main/labs/lab02-web-sockets/transit_service.cc#L63) function.  Also, take a look at what JSON values should be available within the JSON object in the [ScheduleTrip(...)](https://github.umn.edu/umn-csci-3081-s22/shared-upstream/blob/main/labs/lab02-web-sockets/transit_service.cc#L33) function.
 
 **Check Off** - If you see the popup, you can get this portion of the lab checked off.
 
-**Challenge** - Do the second TODO item where you call the model's CreateEntity(...) function. 
+**Challenge** - Do the second `TODO:` item where you call the model's CreateEntity(...) function. 
 
-## Done
+## Lab Completion
 
 THIS LAB IS COMPLETE.
 
