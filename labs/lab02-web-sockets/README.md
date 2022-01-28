@@ -21,7 +21,7 @@
 <hr>
 
 In this lab we are aiming to understand the connection between the front-end and back-end development using a web sockets library.
-We will also investigate the Model View Controller (MVC) pattern.
+We will also investigate the Model View Controller (MVC) pattern.  You will get this lab checked off by your lab section TAs similar to Lab 01.
 
 ## Peparing for the lab
 
@@ -133,9 +133,21 @@ You should see a text box and a button.  Type into the box and press the button.
  1. You will see the response under the text box on the view.
  2. You will see the command on the command line from the transit_service
  
+**Check Off** - If you see the two items above, you can check off this section of the lab.
+ 
 ### Run the schedular
 
 Now navigate to a different view using the same Transit Service API.  Navigate to http://127.0.0.1:8081/schedule.html
+
+This modified view from Lab 01 uses Javascript to interactively schedule trips.  You can now enter a name, click on multiple locations on the map, and schedule a trip.  Notice that when you schedule a trip a command is run in the back-end.  This is called via the api.sendCommand(...) in the view here: https://github.umn.edu/umn-csci-3081-s22/shared-upstream/blob/main/labs/lab02-web-sockets/web/schedule.html#L85.
+
+Your task is to add two new api commands detailed in the `TODO:` comments in schedule.html.  The first command should tell the controller to call the model's ScheduleTrip(...) command.  You will need to edit the JSON in the command so that the trip is scheduled in the model and it is reported in the [api.onmessage(...)](https://github.umn.edu/umn-csci-3081-s22/shared-upstream/blob/main/labs/lab02-web-sockets/web/schedule.html#L69) method.  If done correctly, you will see a blue popup (see original project demo) that says "Your trip is scheduled!"
+
+__Hint:__ Understand how the controller connects to the model in the [ReceiveCommand(...)](https://github.umn.edu/umn-csci-3081-s22/shared-upstream/blob/main/labs/lab02-web-sockets/transit_service.cc#L63) function.
+
+**Check Off** - If you see the popup, you can get this portion of the lab checked off.
+
+**Challenge** - Do the second TODO item where you call the model's CreateEntity(...) function. 
 
 ## Done
 
