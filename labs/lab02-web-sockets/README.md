@@ -52,13 +52,13 @@ We recommend using Docker when developing on your own personal machine.  Here ar
 
 #### Docker Pre-requisites
   * Windows 10 Home
-    * Install [wsl2 and Ubuntu](https://www.youtube.com/watch?v=ilKQHAFeQR0&list=RDCMUCzLbHrU7U3cUDNQWWAqjceA&start_radio=1&t=7)[Windows 10 Doc](https://docs.microsoft.com/en-us/windows/wsl/install-manual)
+    * Install [wsl2 and Ubuntu](https://www.youtube.com/watch?v=ilKQHAFeQR0&list=RDCMUCzLbHrU7U3cUDNQWWAqjceA&start_radio=1&t=7) and [Windows 10 Doc](https://docs.microsoft.com/en-us/windows/wsl/install-manual)
     * For [Windows 11](https://docs.microsoft.com/en-us/windows/wsl/install) 
   * Install [Docker Desktop](https://www.docker.com/products/docker-desktop) from [Docker Hub](https://hub.docker.com/)
   * Linux
     * Use [docker group instead of sudo](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04)
 
-#### Getting Started with Docker (after cloning the repository)
+#### Getting Started with Docker ([after cloning the repository](#download-the-repository))
 
 On Windows use the "Git Bash" terminal.
 
