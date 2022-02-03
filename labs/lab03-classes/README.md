@@ -24,7 +24,7 @@ Pull down the latest batch of code
 ```
 
 
-### What's in labs/lab03_class_basics
+### What's in labs/lab03_classes
 
 - main.cc:
   - This contains the main function, which creates and operates on a set of vectors.
