@@ -38,8 +38,9 @@ Pull down the latest batch of code
 
 ### What You Will Add
 
-- vector3.h ([see example](https://exampleLink.com)):
+- vector3.h ([see example](https://github.umn.edu/umn-csci-3081-s22/examples/tree/main/labs/lab2)):
   - The header file for this new class. It should include the declaration of two constructors and the five class methods: 
+    - Constructor (*it is a good approach to set the data type of the x, y, z as Private however for this lab set it as Public (we need this to be public for the autograder to work*)
     - Print
     - [**Overloading**](https://www.tutorialspoint.com/cplusplus/cpp_overloading.htm) of the operators 
       - addition operator +
@@ -49,6 +50,8 @@ Pull down the latest batch of code
 
 - vector3.cc:
   - The source file for the class definition.
+
+- If you are not familiar with header file guards, you can go to the Zybook section 6.18 for reference: [Zybook section link](https://learn.zybooks.com/zybook/UMNCSCI3081WOrbanSpring2022/chapter/6/section/18?content_resource_id=56063603)
 
 ### Building the Class Vector3
 
