@@ -69,9 +69,7 @@ Vector3 Vector3::operator+(Vector3 vec) {
 }
 ```
 
-Notice that the operator _operator+(Vector3)_ is a class method. It adds two vectors together, but only 1 Vector3 object is passed in.  Notice that we can access the private members of the Vector3 that is passed in because it is of the same type.
-
-Keep in mind that although the x and y components of a Vector3 object are private, they are private only to objects of different types. It means any Vector3 object can directly access private components of any other Vector3 object!
+Notice that the operator _operator+(Vector3)_ is a class method. It adds two vectors together, but only 1 Vector3 object is passed in. 
 
 ### Executing Lab Code
 
