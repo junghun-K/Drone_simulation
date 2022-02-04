@@ -64,7 +64,7 @@ Review _main.cc_ now to see how the class will be used. Notice the class method 
  Here is an example of how to create the addition operator using operator overloading:
 
  ```c++
-Vector3 operator+(Vector3 vec) {
+Vector3 Vector3::operator+(Vector3 vec) {
   return Vector3(x + vec.x, y + vec.y, z + vec.z);
 }
 ```
