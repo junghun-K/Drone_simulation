@@ -83,8 +83,14 @@
 
                 // Example web sockets call to the back-end
                 api.sendCommand("MyCommand", { name: name, number: 0, string: "abc", array: [1,2,3] });
-                // TODO: Call the backend to schedule a trip using the api.sendCommand(...)
+                // for every path between two dots, we create a newly scheduled trip.  So with 4 dots, we should have 3 trips
+                for (var i = 1; i < trip.length; i++) {
+                  // TODO: Call the backend to schedule a trip using the api.sendCommand(...)
+                  api.sendCommand("ScheduleTrip", { name: name, start: [trip[i-1][0], trip[i-1][1]], end: [trip[i][0], trip[i][1]] });
+                }
+
                 // TODO: Call the backend to create a new entity using the api.sendCommand(...)
+                api.sendCommand("CreateEntity", { entityId: 0, type: "entity", name: name, position: [trip[0][0], trip[0][1]] });
 
                 var details = name + ": ";
                 for (var i = 0; i < trip.length; i++) {
