@@ -82,7 +82,7 @@ Build the executable using the makefile and run the executable.
 
 ```bash
 % <Locate to the repo first>
-% cd labs/lab03_class_basics
+% cd labs/lab03-classes
 % make
 % ./vector_app
 ```
