@@ -64,14 +64,12 @@ Review _main.cc_ now to see how the class will be used. Notice the class method 
  Here is an example of how to create the addition operator using operator overloading:
 
  ```c++
-Vector3 operator+(Vector3 vec) {
+Vector3 Vector3::operator+(Vector3 vec) {
   return Vector3(x + vec.x, y + vec.y, z + vec.z);
 }
 ```
 
-Notice that the operator _operator+(Vector3)_ is a class method. It adds two vectors together, but only 1 Vector3 object is passed in.  Notice that we can access the private members of the Vector3 that is passed in because it is of the same type.
-
-Keep in mind that although the x and y components of a Vector3 object are private, they are private only to objects of different types. It means any Vector3 object can directly access private components of any other Vector3 object!
+Notice that the operator _operator+(Vector3)_ is a class method. It adds two vectors together, but only 1 Vector3 object is passed in. 
 
 ### Executing Lab Code
 
@@ -84,7 +82,7 @@ Build the executable using the makefile and run the executable.
 
 ```bash
 % <Locate to the repo first>
-% cd labs/lab03_class_basics
+% cd labs/lab03-classes
 % make
 % ./vector_app
 ```
