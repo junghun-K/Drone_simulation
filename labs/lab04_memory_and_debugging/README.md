@@ -152,7 +152,7 @@ Answer questions 9-10 in the Gradescope assignment.
 6. The program _entity_app_ will run and crash with the following output (your output may look slightly different):
     ````
     (gdb) run
-    Starting program: /home/user/repo/labs/lab04_polymorphism/entity_app 
+    Starting program: /home/user/repo/labs/lab04_memory_and_debugging/partB/entity_app 
     warning: Error disabling address space randomization: Operation not permitted
 
     Program received signal SIGSEGV, Segmentation fault.
