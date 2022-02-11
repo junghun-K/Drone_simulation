@@ -51,7 +51,7 @@ Pull down the latest batch of code
 
 # Part A - Understanding C++ Memory (Gradescope assignment - 50% of Lab04 Grade)
 
-Part A consists of running the `memory_app` program and answering questions on the Gradescope Lab 4 Part A assignment.  You can take the multiple times and the highest score will be used.  **Note:** You are welcome to modify `memory.cc` to help answer any questions.
+Part A consists of running the `memory_app` program and answering questions on the Gradescope Lab 4 Part A assignment.  You can take the assignment multiple times and the highest score will be used.  **Note:** You are welcome to modify `memory.cc` to help answer any questions.
 
 ### Executing Lab Code 
 
@@ -148,7 +148,7 @@ Answer questions 9-10 in the Gradescope assignment.
     
     GDB Quick Guide: [click here](https://condor.depaul.edu/glancast/373class/docs/gdb.html)
 
-5. Once in the debugger session (the prompt will change to (**gdb**)). Then, execute the program with _run_.
+5. Once in the debugger session (the prompt will change to (**gdb**)), execute the program with _run_.
 6. The program _entity_app_ will run and crash with the following output (your output may look slightly different):
     ````
     (gdb) run
