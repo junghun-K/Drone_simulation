@@ -1,4 +1,4 @@
-# 3081 Lab03 - C++ Memory and Debugging
+# 3081 Lab04 - C++ Memory and Debugging
 _(Due: Thursday, Feb. 17, 2022 @ 11:59pm)_
 
 ## What You Will Learn
