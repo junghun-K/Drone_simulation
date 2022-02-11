@@ -373,7 +373,7 @@ In this case, the line number causing the error is provided. If the location is 
 
     If not, don't worry: all you need to do is delete all the dynamically allocated memory using the **appropriate** deallocation methods. Here's a [link](http://cs.ecs.baylor.edu/~donahoo/tools/valgrind/messages.html) that talks about some common error messages on Valgrind Memcheck.
 
-    When your output looks like the output in step 9 and there are no memory leaks from step 10, you have completed the coding part of the lab!
+    When your output looks like the output in step 10 and there are no memory leaks from step 11, you have completed the coding part of the lab!
 
 
 ### Submitting your Lab
