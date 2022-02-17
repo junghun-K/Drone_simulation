@@ -1,4 +1,4 @@
-# 3081 Lab03 - C++ Memory and Debugging
+# 3081 Lab04 - C++ Memory and Debugging 
 _(Due: Thursday, Feb. 17, 2022 @ 11:59pm)_
 
 ## What You Will Learn
@@ -51,7 +51,7 @@ Pull down the latest batch of code
 
 # Part A - Understanding C++ Memory (Gradescope assignment - 50% of Lab04 Grade)
 
-Part A consists of running the `memory_app` program and answering questions on the Gradescope Lab 4 Part A assignment.  You can take the multiple times and the highest score will be used.  **Note:** You are welcome to modify `memory.cc` to help answer any questions.
+Part A consists of running the `memory_app` program and answering questions on the Gradescope Lab 4 Part A assignment.  You can take the assignment multiple times and the highest score will be used.  **Note:** You are welcome to modify `memory.cc` to help answer any questions.
 
 ### Executing Lab Code 
 
@@ -145,10 +145,8 @@ Answer questions 9-10 in the Gradescope assignment.
     ````
     $ gdb entity_app
     ````
-    
-    GDB Quick Guide: [click here](https://condor.depaul.edu/glancast/373class/docs/gdb.html)
 
-5. Once in the debugger session (the prompt will change to (**gdb**)). Then, execute the program with _run_.
+5. Once in the debugger session (the prompt will change to (**gdb**)), execute the program with _run_.
 6. The program _entity_app_ will run and crash with the following output (your output may look slightly different):
     ````
     (gdb) run
@@ -230,7 +228,31 @@ In this case, the line number causing the error is provided. If the location is 
 
     There are several causes of "Segmentation faults" in this program. Use _gdb_ to help to identify and fix each issue until it runs correctly (see step 7). You might find the commands _up_ and _print_ particularly useful.
 
-9. In this program there is a base class called Entity.  MovableEntity and Tree inherit directly from Entity.  Drone and Robot inherit from MoveableEntity.  A robot moves around in a circle of a specified radius and a drone moves in a direction at a specified velocity.  A tree stays in one place.  When your program is running correctly, running the executable should output the following:
+9. If the program run smoothly without any errors then you won't be able to use the _bt_ command anymore. So how can we get into certain areas and check out the data? The answer is to use the break point, you can simply set the break point to the lines that you would like to stop and inspect at. For example, if you would like to stop and inspect the start of the main function, do the following:
+	````
+	(gdb) break main
+	Breakpoint 1 at 0x5555555565eb: file main.cc, line 10.
+	(gdb) run
+	Starting program: /home/user/repo/labs/lab04_memory_and_debugging/partB/entity_app
+	Breakpoint 1, main (argc=32767, argv=0x7ffff7fb3880) at main.cc:10
+	10	int main(int argc, char**argv) {
+	````
+	This will pause the program at the main function and you can continue to run the program line by line:
+	````
+	(gdb) n
+	13	  int iterations = 3;
+	(gdb) n
+	14	  double dt = 0.1;
+	(gdb) n
+	15	  if (argc > 1) {
+	(gdb) n
+	22	  Drone* mainDrone = new Drone("Drone-A");
+	(gdb) n
+	23	  Drone* droneX = new Drone("Drone-X");
+	````
+	Checkout the GDB Quick Guide: [click here](https://condor.depaul.edu/glancast/373class/docs/gdb.html)
+	
+10. In this program there is a base class called Entity.  MovableEntity and Tree inherit directly from Entity.  Drone and Robot inherit from MoveableEntity.  A robot moves around in a circle of a specified radius and a drone moves in a direction at a specified velocity.  A tree stays in one place.  When your program is running correctly, running the executable should output the following:
 
     ````
     Time = 0:
@@ -275,7 +297,7 @@ In this case, the line number causing the error is provided. If the location is 
 	
      **Note: You may fix these errors however you want.  Perhaps consider adding more polymorphic methods or changing method signitures (return types / parameters).**
 
-10. If you're familiar with Java, you know that the jvm handles recycling the memory dynamically allocated in the heap. However, in C/C++ the memory is not recycled automatically, meaning your program is prone to memory leakage where your programs can run out memory. All the memory that is allocated dynamically must be recycled using  [`free(void*)`](http://www.cplusplus.com/reference/cstdlib/free/) which should be used when using `malloc`,`calloc` which are used in the C programming language memory calls. Since we are programming in C++ these should not be used in this class.
+11. If you're familiar with Java, you know that the jvm handles recycling the memory dynamically allocated in the heap. However, in C/C++ the memory is not recycled automatically, meaning your program is prone to memory leakage where your programs can run out memory. All the memory that is allocated dynamically must be recycled using  [`free(void*)`](http://www.cplusplus.com/reference/cstdlib/free/) which should be used when using `malloc`,`calloc` which are used in the C programming language memory calls. Since we are programming in C++ these should not be used in this class.
 
     In C++, the `new` operator is used to dynamically allocate memory. When using the `new` operator you need to use `delete ptrName`. Click [`here`](https://www.geeksforgeeks.org/g-fact-30/) for more information. When dynamically allocating an array using `new [] ` you need to use `delete [] ptrName`. Click [`here`](http://www.cplusplus.com/reference/new/operator%20delete[]/) for more information. **Note: `delete/delete[]` are specific to C++ while `free` works on both C/C++.**  
 
@@ -283,7 +305,7 @@ In this case, the line number causing the error is provided. If the location is 
 
     This is where using `Valgrind` is helpful in detecting memory leaks. Click [here](https://valgrind.org/docs/manual/quick-start.html) to reference the manual. The Valgrind tool suite provides a number of debugging and profiling tools that help you make your programs faster and more correct. The most popular of these tools is called **Memcheck**. Memcheck helps you by identifying possible memory-related issues in your C/C++ programs.
 
-> ### Note: Step 10 depends on the successful completion of step 9, so please make sure you finish step 9 before completing this step. 
+> ### Note: Step 11 depends on the successful completion of step 10, so please make sure you finish step 10 before completing this step. 
 
 ### To run Valgrind on your program follow the steps below:
 
@@ -351,7 +373,7 @@ In this case, the line number causing the error is provided. If the location is 
 
     If not, don't worry: all you need to do is delete all the dynamically allocated memory using the **appropriate** deallocation methods. Here's a [link](http://cs.ecs.baylor.edu/~donahoo/tools/valgrind/messages.html) that talks about some common error messages on Valgrind Memcheck.
 
-    When your output looks like the output in step 9 and there are no memory leaks from step 10, you have completed the coding part of the lab!
+    When your output looks like the output in step 10 and there are no memory leaks from step 11, you have completed the coding part of the lab!
 
 
 ### Submitting your Lab
