@@ -237,7 +237,7 @@ Before you continue, go to the top folder of this lab.
  6. Edit the `mainpage.h` file by giving it a title and write a
     sentence for the introduction.
 
- 7. Now modify the `/lib/routing/include/routing/astar.h` file to add Doxygen comments and see how that gets added to the documentation. Follow the commenting style that you see in `mainpage.h`. Use **@brief** to describe the class and at least one of the class methods and **@return** to specify a function's return values. You can also refer to Doxygen's [manual](https://www.doxygen.nl/manual/docblocks.html) for their commenting standards.
+ 7. Now modify the `/lib/routing/include/routing/astar.h` file to add Doxygen comments and see how that gets added to the documentation. Follow the commenting style that you see in `mainpage.h`. Use **@brief** to describe the class or function and **@parm** for the take in parameter of the function and **@return** to specify a function's return values if applicable. You can also refer to Doxygen's [manual](https://www.doxygen.nl/manual/docblocks.html) for their commenting standards.
 
 8. Files that you would need to document using doxygen:
   - /lib/routing/include/
