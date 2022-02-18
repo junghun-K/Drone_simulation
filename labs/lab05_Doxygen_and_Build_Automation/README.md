@@ -245,6 +245,8 @@ Before you continue, go to the top folder of this lab.
     - graph.h
     - routing_api.h
     - routing_strategy.h
+ 8. You can check out this [example code](https://www.doxygen.nl/manual/docblocks.html) and see how the documentation will look like 
+    [here](https://www.doxygen.nl/manual/examples/afterdoc/html/class_afterdoc___test.html)
 <br>
 
 # Optional
