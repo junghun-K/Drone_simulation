@@ -135,7 +135,7 @@ Checkout the output path picture inside the src folder.  You should probably see
 
 - Green line  : A* algorithm (fastest route from Top Left to Bottom Right)
 - Orange line : Dijkstra algorithm (fastest route from Middle left to Middle Right)
-- Red line    : Depth First Search algorithm (fastest route from Top left to Bottom Right)
+- Red line    : Depth First Search algorithm (a route from Top left to Bottom Right)
 
 Now, compare the make file with [inefficient makefile](https://github.umn.edu/umn-csci-3081-s22/examples/blob/main/labs/lab5/Inefficient%20make%20example/Makefile) with what you wrote and see the difference.
 
