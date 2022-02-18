@@ -267,7 +267,7 @@ Submit your work by uploading the following files to Canvas for the Lab05 assign
 <ul>
   <li>  Your edited <code>Makefile</code> file
   <li>  <code>Doxyfile</code>
-  <li>  All the <code>edited files</code> from the step 7 Doxygen 
+  <li>  All the <code>edited files</code> from the step 8 Doxygen 
 </ul>
 
 THIS CHECKPOINT IS COMPLETE.
