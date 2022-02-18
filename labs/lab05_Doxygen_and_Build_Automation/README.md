@@ -224,14 +224,22 @@ Before you continue, go to the top folder of this lab.
  ```
 
   Generate documentation again by running doxygen as you did before (step 3) from the
-  docs directory and notice how you now have a landing page for your project.
+  docs directory and notice nothing happens.  This is because you must specify the destination of the `mainpage.h` file in your Doxyfile.
 
- 5. Edit the `mainpage.h` file by giving it a title and write a
+ 5. Edit the `Doxyfile` by adding the path `"../src/mainpage.h"` to the `INPUT` line.  The input line should look like this...
+
+ ```
+ INPUT =  = "../lib/routing/include/"
+ ```
+  
+ Now, rerun doxygen to see your changed manpage.
+
+ 6. Edit the `mainpage.h` file by giving it a title and write a
     sentence for the introduction.
 
- 6. Now modify the `/lib/routing/include/routing/astar.h` file to add Doxygen comments and see how that gets added to the documentation. Follow the commenting style that you see in `mainpage.h`. Use **@brief** to describe the class and at least one of the class methods and **@return** to specify a function's return values. You can also refer to Doxygen's [manual](https://www.doxygen.nl/manual/docblocks.html) for their commenting standards.
+ 7. Now modify the `/lib/routing/include/routing/astar.h` file to add Doxygen comments and see how that gets added to the documentation. Follow the commenting style that you see in `mainpage.h`. Use **@brief** to describe the class and at least one of the class methods and **@return** to specify a function's return values. You can also refer to Doxygen's [manual](https://www.doxygen.nl/manual/docblocks.html) for their commenting standards.
 
-7. Files that you would need to document using doxygen:
+8. Files that you would need to document using doxygen:
   - /lib/routing/include/
     - routing/
       - astar.h
@@ -245,7 +253,7 @@ Before you continue, go to the top folder of this lab.
     - graph.h
     - routing_api.h
     - routing_strategy.h
- 8. You can check out this [example code](https://www.doxygen.nl/manual/docblocks.html) and see how the documentation will look like 
+ 9. You can check out this [example code](https://www.doxygen.nl/manual/docblocks.html) and see how the documentation will look like 
     [here](https://www.doxygen.nl/manual/examples/afterdoc/html/class_afterdoc___test.html)
 <br>
 
