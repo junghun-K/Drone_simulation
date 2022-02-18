@@ -95,7 +95,7 @@ The solution is to use wildcards.  Open up the Makefile.  Notice there is an `al
 	$(CXX) $(CXXFLAGS) $(INCLUDES) -c $^ -o $@
 ```
 
-Notice we are using the configuration variables defined above.
+Notice we are using the configuration variables defined above. Go ahead and add this to your make file in 'src/Makefile'.
 
 **What's happening here?**
 
@@ -157,7 +157,7 @@ class. Doxygen also generates documentation for all functions of a class.
 
 ***NOTE: Students working on their personal machines will have to [download](https://www.doxygen.nl/manual/install.html) the
 doxygen executable before continuing. CSE labs machines already have doxygen
-installed.***
+installed. Windows .exe can be found here ->[download](https://www.doxygen.nl/files/doxygen-1.9.3-setup.exe)***
 
 <br>
 
