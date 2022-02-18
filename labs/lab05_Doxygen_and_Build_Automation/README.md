@@ -226,10 +226,10 @@ Before you continue, go to the top folder of this lab.
   Generate documentation again by running doxygen as you did before (step 3) from the
   docs directory and notice nothing happens.  This is because you must specify the destination of the `mainpage.h` file in your Doxyfile.
 
- 5. Edit the `Doxyfile` by adding the path `"../src/mainpage.h"` to the `INPUT` line.  The input line should look like this...
+ 5. Edit the `Doxyfile` by adding the path `"../src/mainpage.h"` to the `INPUT` line.  The input line should look like this after adding your new path
 
  ```
- INPUT =  = "../lib/routing/include/"
+  INPUT                  = "../lib/routing/include/" "../src/mainpage.h"
  ```
   
  Now, rerun doxygen to see your changed manpage.
