@@ -57,12 +57,10 @@ public:
             details["details"] = entity.GetDetails();
         }
         details["id"] = entity.GetId();
-        JsonArray pos = details["pos"];
-        JsonArray dir = details["dir"];
-        for (int i = 0; i < 3; i++) {
-            pos[i] = entity.GetPosition(i);
-            dir[i] = entity.GetDirection(i);
-        }
+        JsonArray pos = {entity.GetPosition(0), entity.GetPosition(1), entity.GetPosition(2)};
+        JsonArray dir = {entity.GetDirection(0), entity.GetDirection(1), entity.GetDirection(2)};
+        details["pos"] = pos;
+        details["dir"] = dir;
         SendEventToView(event, details);
     }
 
