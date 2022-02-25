@@ -122,6 +122,7 @@ Finally, you will have the following new files in your project folder:
 - RobotFactory.cc
 - RobotFactory.h
 - simulation_model.cc (Refactored)
+- simulation_model.h (Refactored)
 - IEntityFactory.h
 
 After you completed implementing the composite factory pattern as well as refactoring the simulation_model class, then you would need to run the project and see whether it produce the drone as well as robot the same way as initially (workshop 3).
