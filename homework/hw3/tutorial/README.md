@@ -22,7 +22,7 @@
 ## What you'll learn:
 <ol>
   <li>  How to create Google Tests
-  <li>  How to write good / throuough unit tests
+  <li>  How to write good / thorough unit tests
   <li>  An introduction to mutant testing
 </ol>
 
