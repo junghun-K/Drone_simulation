@@ -27,6 +27,9 @@ class Queue
         Queue(int size = SIZE);     // constructor
         ~Queue();                   // destructor
 
+        Queue(const Queue &q1);    // copy constructor
+        Queue& operator=(const Queue& other); // assignment operator
+
         int dequeue();              // pop 0th element from the queue and return it
         void enqueue(int x);        // add a new element 'int x' to the end of the queue
         int peek();                 // look at 0th element from the queue (w.o removal) and return it
