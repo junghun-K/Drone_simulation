@@ -3,6 +3,8 @@
 
 #include "util/json.h"
 #include "entity.h"
+#include "math/vector3.h"
+#include "IStrategy.h"
 
 #include <vector>
 
@@ -12,16 +14,41 @@ public:
 
     ~Robot() override = default;
 
-    double GetPosition(int index) const override;
+    Vector3 GetPosition() const { return position; }
 
-    double GetDirection(int index) const override;
+    Vector3 GetDirection() const { return direction; }
+
+    Vector3 GetDestination() const { return destination; }
+
+    bool GetAvailability() const {return available;}
 
     JsonObject GetDetails() const override;
 
+    float GetSpeed() const {return speed;}
+
+    std::string GetStrategyName() const {return strategyName;}
+
+    void SetAvailability(bool choice);
+
+    void SetPosition(Vector3 pos_) { position = pos_; }
+
+    void SetDirection(Vector3 dir_) { direction = dir_; }
+
+    void SetDestination(Vector3 des_) { destination = des_;}
+
+    void SetStrategyName(std::string strategyName_) { strategyName = strategyName_;}
+
+    void Rotate(double angle);
+
 protected:
     JsonObject details;
-    std::vector<double> position;
-    std::vector<double> direction;
+    Vector3 position;
+    Vector3 direction;
+    Vector3 destination;
+    float speed;
+    bool available=true;
+    IStrategy* strategy = nullptr;
+    std::string strategyName;
 };
 
 #endif //ROBOT_H

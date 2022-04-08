@@ -3,7 +3,7 @@
         "command": "CreateEntity",
       	"params": {
       	    "type": "drone",
-            "name": "drone",
+            "name": "Drone",
       	    "mesh": "assets/model/drone.glb",
       	    "position": [498.292, 253.883, -228.623],
       	    "scale": [0.1, 0.1, 0.1],

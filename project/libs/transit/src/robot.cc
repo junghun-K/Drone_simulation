@@ -6,16 +6,20 @@ Robot::Robot(JsonObject &obj) : details(obj) {
 
     JsonArray dir(obj["direction"]);
     direction = {dir[0], dir[1], dir[2]};
-}
 
-double Robot::GetPosition(int index) const {
-    return position[index];
-}
-
-double Robot::GetDirection(int index) const {
-    return direction[index];
+    speed = obj["speed"];
+    available = true;
 }
 
 JsonObject Robot::GetDetails() const {
     return details;
+}
+
+void Robot::SetAvailability(bool choice) {
+    available = choice;
+}
+
+void Robot::Rotate(double angle){
+    direction.x = direction.x*std::cos(angle) - direction.z*std::sin(angle);
+    direction.z = direction.x*std::sin(angle) + direction.z*std::cos(angle);
 }

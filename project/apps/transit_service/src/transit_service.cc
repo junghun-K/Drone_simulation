@@ -2,6 +2,7 @@
 #include <chrono>
 #include "WebServer.h"
 #include "simulation_model.h"
+#include "routing_api.h"
 
 //--------------------  Controller ----------------------------
 
@@ -9,11 +10,15 @@
 /// in the model view controller pattern.
 class TransitService : public JsonSession, public IController {
 public:
-    TransitService(SimulationModel& model) : model(model), start(std::chrono::system_clock::now()), time(0.0) {}
+    TransitService(SimulationModel& model) : model(model), start(std::chrono::system_clock::now()), time(0.0) {
+        routing::RoutingAPI api;
+        routing::IGraph* graph = api.LoadFromFile("libs/routing/data/umn.osm");
+        model.SetGraph(graph);
+    }
 
     /// Handles specific commands from the web server
     void ReceiveCommand(const std::string& cmd, JsonObject& data, JsonObject& returnValue) {
-        // std::cout << cmd << ": " << data << std::endl;
+        //std::cout << cmd << ": " << data << std::endl;
         if (cmd == "CreateEntity") {
             model.CreateEntity(data);
         }
@@ -57,8 +62,10 @@ public:
             details["details"] = entity.GetDetails();
         }
         details["id"] = entity.GetId();
-        JsonArray pos = {entity.GetPosition(0), entity.GetPosition(1), entity.GetPosition(2)};
-        JsonArray dir = {entity.GetDirection(0), entity.GetDirection(1), entity.GetDirection(2)};
+        Vector3 pos_ = entity.GetPosition();
+        Vector3 dir_ = entity.GetDirection();
+        JsonArray pos = {pos_.x, pos_.y, pos_.z};
+        JsonArray dir = {dir_.x, dir_.y, dir_.z};
         details["pos"] = pos;
         details["dir"] = dir;
         SendEventToView(event, details);
