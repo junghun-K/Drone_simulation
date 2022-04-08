@@ -83,6 +83,7 @@ We will be using **cpplint** program as this program follows the Google code sty
     ````bash
     cpplint --filter=-legal/copyright,-build/include,-build/namespaces ./libs/transit/src/drone.cc
     ````
+    The filter keyword is to filter the errors that we do not want, which in our case, we want to exclude 3 cases (legal/copyright, build/include, build/namespaces). <br>
     You will see something like
     ````bash
     ./libs/transit/src/drone.cc:11:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
@@ -100,7 +101,6 @@ We will be using **cpplint** program as this program follows the Google code sty
     ````bash
     cpplint --filter=-legal/copyright,-build/include,-build/namespaces ./libs/transit/src/drone.cc
     ````
-    The filter keyword is to filter the errors that we do not want, which in our case, we want to exclude 3 cases (legal/copyright, build/include, build/namespaces).
 6. Manually checking and trying to fix the errors to match the styling guideline is very tedious. So, we would use some plugins to do this automatically.
 7. We will be using Visual Studio Code editor to match the styling guideline.<br>
 The following command will open current folder inside the Visual Studio Code editor. 
