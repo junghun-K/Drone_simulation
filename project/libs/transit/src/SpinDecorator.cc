@@ -1,7 +1,7 @@
 #include "SpinDecorator.h"
 
 bool SpinDecorator::IsCompleted(){
-    return this->CelebrationDecorator::IsCompleted();
+    return spinTime >= 1.5;
 }
 
 void SpinDecorator::Move(IEntity* entity, double dt){
