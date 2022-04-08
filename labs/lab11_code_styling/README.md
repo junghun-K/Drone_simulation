@@ -81,18 +81,18 @@ We will be using **cpplint** program as this program follows the Google code sty
 2. Make sure you are inside the **project** folder.
 3. Run cpplint onto one of the src files (drone.cc)
     ````bash
-    cpplint ./libs/transit/src/drone.cc
+    cpplint --filter=-legal/copyright,-build/include,-build/namespaces ./libs/transit/src/drone.cc
     ````
     You will see something like
     ````bash
-    ./libs/transit/src/drone.cc:0:  No copyright message found.  You should have a line: "Copyright [year] <Copyright Owner>"  [legal/copyright] [5]
-    ./libs/transit/src/drone.cc:2:  Include the directory when naming .h files  [build/include_subdir] [4]
+    ./libs/transit/src/drone.cc:11:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
+    ./libs/transit/src/drone.cc:30:  Missing space before ( in for(  [whitespace/parens] [5]
     .
     .
     .
     ./libs/transit/src/drone.cc:86:  Missing space before {  [whitespace/braces] [5]
     Done processing ./libs/transit/src/drone.cc
-    Total errors found: 38
+    Total errors found: 36
     ````
     This means that there are 38 total errors that doesn't match the Google styling guide. 
 4. Go into the *drone.cc* file and try to fix the errors manually.
