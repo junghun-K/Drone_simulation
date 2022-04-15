@@ -18,9 +18,15 @@ class PriceDecorator: public IStrategy {
         // Gets the estimated price of the trip. This is computed
         // at the start of a trip, and doesn't change. The actual
         // price of the trip may differ from this estimated price.
-        virtual float getEstimatedTripPrice() = 0;
+        virtual float getEstimatedTripPrice();
+
+        // Sets the estimated price of the trip. This is computed
+        // at the start of a trip, and doesn't change. The actual
+        // price of the trip may differ from this estimated price.
+        virtual float setEstimatedTripPrice();
     protected:
         IStrategy *strategy;
+        float estimatedPrice;
 };
 
 #endif // PRICE_DECORATOR_H_
