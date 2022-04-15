@@ -5,6 +5,7 @@
 #include "util/json.h"
 #include "graph.h"
 #include "math/vector3.h"
+#include "Wallet.h"
 // #include "IStrategy.h"
 
 using namespace routing;
@@ -18,6 +19,7 @@ public:
       static int currentId = 0;
       id = currentId;
       currentId++;
+      wallet = Wallet();
     }
     virtual ~IEntity() {}
     virtual int GetId() const { return id; }
@@ -36,9 +38,12 @@ public:
     virtual void SetDestination(Vector3 des_) {}
     virtual void SetStrategyName(std::string strategyName_) {}
     virtual void Rotate(double dt) {}
+    virtual Wallet GetWallet() {return wallet;}
+
 protected:
     int id;
     const IGraph* graph;
+    Wallet wallet;
 };
 
 #endif
