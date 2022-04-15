@@ -6,7 +6,11 @@
 
 class PriceDecorator: public IStrategy {
     public:
-        PriceDecorator(IStrategy *strategy_) {strategy = strategy_; estimatedPrice = 0; realPrice = 0;}
+        PriceDecorator(IStrategy *strategy_) {
+            strategy = strategy_; 
+            estimatedPrice = 0; 
+            // realPrice = 0;
+        }
 
         // Move the entity. Deducts a price from the wallet when the entity moves.
         void Move(IEntity* entity, double dt);

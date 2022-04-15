@@ -8,11 +8,11 @@ void PriceDecorator::Move(IEntity* entity, double dt){
     strategy->Move(entity, dt);
 }
 
-float getEstimatedTripPrice() {
+float PriceDecorator::getEstimatedTripPrice() {
     return estimatedPrice;
 }
 
-void setEstimatedTripPrice(Vector3 pos_, Vector3 des_) {
+void PriceDecorator::setEstimatedTripPrice(Vector3 pos_, Vector3 des_) {
     float x_coor = (pos_.x - des_.x); // x_coordinate
     float y_coor = (pos_.y - des_.y); // y_coordinate
 
