@@ -12,22 +12,24 @@ class PriceDecorator: public IStrategy {
             // realPrice = 0;
         }
 
+        ~PriceDecorator() {}
+
         // Move the entity. Deducts a price from the wallet when the entity moves.
-        void Move(IEntity* entity, double dt);
+        virtual void Move(IEntity* entity, double dt) = 0;
 
         // If the route is completed. This occurs when we reach the destination 
         // or if the entity runs out of money.
-        bool IsCompleted();
+        virtual bool IsCompleted() = 0;
 
         // Gets the estimated price of the trip. This is computed
         // at the start of a trip, and doesn't change. The actual
         // price of the trip may differ from this estimated price.
-        virtual float getEstimatedTripPrice() = 0;
+        float getEstimatedTripPrice();
 
         // Sets the estimated price of the trip. This is computed
         // at the start of a trip, and doesn't change. The actual
         // price of the trip may differ from this estimated price.
-        virtual void setEstimatedTripPrice(Vector3 pos_, Vector3 des_) = 0;
+        void setEstimatedTripPrice(Vector3 pos_, Vector3 des_);
     protected:
         IStrategy *strategy;
         float estimatedPrice;

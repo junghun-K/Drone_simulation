@@ -1,13 +1,5 @@
 #include "PriceDecorator.h"
 
-bool PriceDecorator::IsCompleted(){
-    return strategy->IsCompleted();
-}
-
-void PriceDecorator::Move(IEntity* entity, double dt){
-    strategy->Move(entity, dt);
-}
-
 float PriceDecorator::getEstimatedTripPrice() {
     return estimatedPrice;
 }
