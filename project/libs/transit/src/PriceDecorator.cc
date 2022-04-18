@@ -1,13 +1,12 @@
 #include "PriceDecorator.h"
 
-float PriceDecorator::getEstimatedTripPrice() {
-    return estimatedPrice;
-}
+PriceDecorator::PriceDecorator(IStrategy *strategy_, Vector3 pos_, Vector3 des_) {
+    strategy = strategy_; 
 
-void PriceDecorator::setEstimatedTripPrice(Vector3 pos_, Vector3 des_) {
-    float x_coor = abs(pos_.x - des_.x); // x_coordinate
-    float y_coor = abs(pos_.y - des_.y); // y_coordinate
+    // Set estimated price
+    float x_dist = abs(pos_.x - des_.x);
+    float y_dist  = abs(pos_.y - des_.y);
 
-    // Pythagorian theorem to get the price for beeline
-    estimatedPrice = sqrt(pow(x_coor,2)+pow(y_coor,2));
+    // Pythagorian theorem to get the estimated price
+    estimatedPrice = sqrt(pow(x_dist, 2) + pow(y_dist, 2));
 }

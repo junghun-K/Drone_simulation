@@ -5,11 +5,11 @@
 
 class StandardPriceDecorator: public PriceDecorator {
     public:
-        // TODO - insufficient funds needs to be checked to see if we can pay the estimated price
-        StandardPriceDecorator(IStrategy *strategy_) : PriceDecorator(strategy_) { insufficientFunds = false; }
+        StandardPriceDecorator(IStrategy *strategy_, Vector3 pos_, Vector3 des_, IEntity* entity);
         ~StandardPriceDecorator() {}
         void Move(IEntity* entity, double dt);
         bool IsCompleted();
+        float getEstimatedTripPrice();
     private:
         double price_per_sec = .05;
         bool insufficientFunds;

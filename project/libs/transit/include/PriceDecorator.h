@@ -6,11 +6,7 @@
 
 class PriceDecorator: public IStrategy {
     public:
-        PriceDecorator(IStrategy *strategy_) {
-            strategy = strategy_; 
-            estimatedPrice = 0; 
-            // realPrice = 0;
-        }
+        PriceDecorator(IStrategy *strategy_, Vector3 pos_, Vector3 des_);
 
         ~PriceDecorator() {}
 
@@ -24,16 +20,10 @@ class PriceDecorator: public IStrategy {
         // Gets the estimated price of the trip. This is computed
         // at the start of a trip, and doesn't change. The actual
         // price of the trip may differ from this estimated price.
-        float getEstimatedTripPrice();
-
-        // Sets the estimated price of the trip. This is computed
-        // at the start of a trip, and doesn't change. The actual
-        // price of the trip may differ from this estimated price.
-        void setEstimatedTripPrice(Vector3 pos_, Vector3 des_);
+        virtual float getEstimatedTripPrice() = 0;
     protected:
         IStrategy *strategy;
         float estimatedPrice;
-        // float realPrice;
 };
 
 #endif // PRICE_DECORATOR_H_

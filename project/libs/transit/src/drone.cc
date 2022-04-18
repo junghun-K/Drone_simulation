@@ -5,6 +5,7 @@
 #include "DijkstraStrategy.h"
 #include "DfsStrategy.h"
 #include "SpinDecorator.h"
+#include "StandardPriceDecorator.h"
 #include <cmath>
 #include <limits>
 
@@ -45,8 +46,10 @@ void Drone::GetNearestEntity(std::vector<IEntity*> scheduler) {
         if(targetStrategyName.compare("beeline") == 0){
             toTargetDesStrategy = new Beeline(nearestEntity->GetPosition(), nearestEntity->GetDestination());
         } else if (targetStrategyName.compare("astar") == 0){
+            // Apply Standard pricing strategy to astar method
             toTargetDesStrategy = new AstarStrategy(nearestEntity->GetPosition(), nearestEntity->GetDestination(), graph);
             toTargetDesStrategy = new SpinDecorator(toTargetDesStrategy); // add decorator
+            toTargetDesStrategy = new StandardPriceDecorator(toTargetDesStrategy, nearestEntity->GetPosition(), nearestEntity->GetDestination(), nearestEntity);
         } else if (targetStrategyName.compare("dfs") == 0){
             toTargetDesStrategy = new DfsStrategy(nearestEntity->GetPosition(), nearestEntity->GetDestination(), graph);
             toTargetDesStrategy = new SpinDecorator(toTargetDesStrategy); // add decorator
