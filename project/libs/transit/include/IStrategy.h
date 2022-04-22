@@ -14,6 +14,7 @@ class IStrategy {
     protected:
         // IGraph object to be used in the simulation.
         const IGraph* graph;
+        std::vector<std::vector<float>> path;
 }; //close class 
 
 #endif // ISTRATEGY_H_

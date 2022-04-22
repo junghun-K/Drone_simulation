@@ -17,13 +17,10 @@ class PriceDecorator: public IStrategy {
         // or if the entity runs out of money.
         virtual bool IsCompleted() = 0;
 
-        // Gets the estimated price of the trip. This is computed
-        // at the start of a trip, and doesn't change. The actual
-        // price of the trip may differ from this estimated price.
-        virtual float getEstimatedTripPrice() = 0;
     protected:
         IStrategy *strategy;
-        float estimatedPrice;
+        bool insufficientFunds;
+        float estimatedDistance;
 };
 
 #endif // PRICE_DECORATOR_H_
