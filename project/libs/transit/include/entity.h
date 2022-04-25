@@ -19,7 +19,7 @@ public:
       static int currentId = 0;
       id = currentId;
       currentId++;
-      wallet = Wallet();
+      wallet = new Wallet();
     }
     virtual ~IEntity() {}
     virtual int GetId() const { return id; }
@@ -38,12 +38,12 @@ public:
     virtual void SetDestination(Vector3 des_) {}
     virtual void SetStrategyName(std::string strategyName_) {}
     virtual void Rotate(double dt) {}
-    virtual Wallet GetWallet() {return wallet;}
+    virtual Wallet GetWallet() {return *wallet;}
 
 protected:
     int id;
     const IGraph* graph;
-    Wallet wallet;
+    Wallet* wallet;
 };
 
 #endif
