@@ -17,6 +17,9 @@ class PriceDecorator: public IStrategy {
         // or if the entity runs out of money.
         virtual bool IsCompleted() = 0;
 
+        // Get the esimated price of the trip
+        virtual float GetEstimatedPrice() = 0;
+
     protected:
         IStrategy *strategy;
         bool insufficientFunds;
