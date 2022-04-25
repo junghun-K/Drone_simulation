@@ -5,14 +5,13 @@
 
 class StandardPriceDecorator: public PriceDecorator {
     public:
-        StandardPriceDecorator(IStrategy *strategy_, Vector3 pos_, Vector3 des_, IEntity* entity);
+        StandardPriceDecorator(IStrategy *strategy_, Vector3 pos_, Vector3 des_, IEntity* entity_);
         ~StandardPriceDecorator() {}
         void Move(IEntity* entity, double dt);
         bool IsCompleted();
-        float getEstimatedTripPrice();
     private:
         double price_per_sec = .05;
-        bool insufficientFunds;
+        IEntity* entity;
 };
 
 #endif // STANDARD_PRICE_DECORATOR_H_

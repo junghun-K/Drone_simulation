@@ -37,6 +37,7 @@
         <div id="popup"><h2>Your trip is scheduled!</h2></div>
         <div><h1>Request a Trip:</h1></div>
         <div class="indent">Name: <input id="name" type="Text"></div>
+        <div class="indent">Deposit: <input id="deposit" type="number" min="0" value="0"></div> 
         <div class="indent">Search Strategy:
             <select id="search-strategy">
                 <option value="beeline">Beeline</option>
@@ -98,6 +99,10 @@
                 if(name == ""){
                   errorDiv.innerHTML += '<p style="color: red">[!] Error, missing name...</p>'
                 }
+                var deposit = parseFloat($("#deposit").val());
+                if(deposit == 0){
+                  errorDiv.innerHTML += '<p style="color: red">[!] Error, missing deposit...</p>'
+                }
                 if(trip.length < 2){
                   errorDiv.innerHTML += '<p style="color: red">[!] Error, missing pickup and drop off location ...</p>'
                 }
@@ -122,6 +127,7 @@
                   api.sendCommand("CreateEntity", {
                         "type": "robot",
                         "name": name,
+                        "deposit": deposit,
                         "mesh": "assets/model/robot.glb",
                         "position": [(min.x+(max.x-min.x)*start[0])*scale, 254.665*start[1], (min.z+(max.z-min.z)*start[2])*scale],
                         "scale": [0.25, 0.25, 0.25],

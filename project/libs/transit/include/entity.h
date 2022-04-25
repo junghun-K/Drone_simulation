@@ -21,7 +21,7 @@ public:
       currentId++;
       wallet = new Wallet();
     }
-    virtual ~IEntity() {}
+    virtual ~IEntity() { delete wallet;}
     virtual int GetId() const { return id; }
     virtual Vector3 GetPosition() const = 0;
     virtual Vector3 GetDirection() const = 0;
@@ -38,7 +38,11 @@ public:
     virtual void SetDestination(Vector3 des_) {}
     virtual void SetStrategyName(std::string strategyName_) {}
     virtual void Rotate(double dt) {}
+<<<<<<< HEAD
     virtual Wallet GetWallet() {return *wallet;}
+=======
+    virtual Wallet* GetWallet() {return wallet;}
+>>>>>>> dfe1d16024049f0e4c4761812e4e9f5f94dc2840
 
 protected:
     int id;
