@@ -9,6 +9,7 @@ class StandardPriceDecorator: public PriceDecorator {
         ~StandardPriceDecorator() {}
         void Move(IEntity* entity, double dt);
         bool IsCompleted();
+        float GetEstimatedPrice();
     private:
         double price_per_sec = .05;
         IEntity* entity;

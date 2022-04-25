@@ -3,6 +3,7 @@
 StandardPriceDecorator::StandardPriceDecorator(IStrategy *strategy_, Vector3 pos_, Vector3 des_, IEntity* entity_) 
   : PriceDecorator(strategy_, pos_, des_) {
       entity = entity_;
+      std::cout << "Estimated price " << GetEstimatedPrice() << std::endl;
   }
 
 void StandardPriceDecorator::Move(IEntity* drone, double dt) {
@@ -24,4 +25,8 @@ bool StandardPriceDecorator::IsCompleted() {
     bool completed = strategy->IsCompleted() || insufficientFunds;
     std::cout << "Completed " << completed << std::endl;
     return completed;
+}
+
+float StandardPriceDecorator::GetEstimatedPrice() {
+    return estimatedDistance * .0015;
 }
