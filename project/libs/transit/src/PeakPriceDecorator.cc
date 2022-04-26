@@ -1,12 +1,12 @@
-#include "PeekPriceDecorator.h"
+#include "PeakPriceDecorator.h"
 
-PeekPriceDecorator::PeekPriceDecorator(IStrategy *strategy_, Vector3 pos_, Vector3 des_, IEntity* entity_) 
+PeakPriceDecorator::PeakPriceDecorator(IStrategy *strategy_, Vector3 pos_, Vector3 des_, IEntity* entity_)
   : PriceDecorator(strategy_, pos_, des_) {
       entity = entity_;
       std::cout << "Estimated price " << GetEstimatedPrice() << std::endl;
   }
 
-void PeekPriceDecorator::Move(IEntity* drone, double dt) {
+void PeakPriceDecorator::Move(IEntity* drone, double dt) {
     double cost = price_per_sec * dt;
     Wallet* wallet = entity->GetWallet();
     std::cout << "Cost of move is " << cost << std::endl;
@@ -21,12 +21,12 @@ void PeekPriceDecorator::Move(IEntity* drone, double dt) {
     }
 }
 
-bool PeekPriceDecorator::IsCompleted() {
+bool PeakPriceDecorator::IsCompleted() {
     bool completed = strategy->IsCompleted() || insufficientFunds;
     std::cout << "Completed " << completed << std::endl;
     return completed;
 }
 
-float PeekPriceDecorator::GetEstimatedPrice() {
-    return estimatedDistance * .0015;
+float PeakPriceDecorator::GetEstimatedPrice() {
+    return estimatedDistance * .003;
 }
