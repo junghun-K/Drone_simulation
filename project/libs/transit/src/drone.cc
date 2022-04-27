@@ -7,6 +7,7 @@
 #include "SpinDecorator.h"
 #include "StandardPriceDecorator.h"
 #include "PeakPriceDecorator.h"
+#include "DiscountPriceDecorator.h"
 #include <cmath>
 #include <limits>
 
@@ -70,6 +71,13 @@ void Drone::GetNearestEntity(std::vector<IEntity*> scheduler) {
         } else if (targetStrategyName.compare("dijkstra") == 0){
             toTargetDesStrategy = new DijkstraStrategy(nearestEntity->GetPosition(), nearestEntity->GetDestination(), graph);
             toTargetDesStrategy = new SpinDecorator(toTargetDesStrategy); // add decorator
+            toTargetDesStrategy = new DiscountPriceDecorator(toTargetDesStrategy, nearestEntity->GetPosition(), nearestEntity->GetDestination(), nearestEntity);
+            if (((PriceDecorator*)toTargetDesStrategy)->GetEstimatedPrice() > nearestEntity->GetWallet()->getBalance()) {
+                std::cout << "Estimated price is greater than wallet balance, not starting trip." << std::endl;
+                toTargetDesStrategy = NULL;
+                available = true;
+                nearestEntity = NULL;
+            }
         } else {
             // If none of the strategy name matched, use beeline as default.
             toTargetDesStrategy = new Beeline(nearestEntity->GetPosition(), nearestEntity->GetDestination());

@@ -11,7 +11,7 @@ class PeakPriceDecorator: public PriceDecorator {
         bool IsCompleted();
         float GetEstimatedPrice();
     private:
-        double price_per_sec = .10;
+        double price_per_sec = .10; // 200% peak
         IEntity* entity;
 };
 
