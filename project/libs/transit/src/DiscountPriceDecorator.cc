@@ -1,12 +1,12 @@
-#include "StandardPriceDecorator.h"
+#include "DiscountPriceDecorator.h"
 
-StandardPriceDecorator::StandardPriceDecorator(IStrategy *strategy_, Vector3 pos_, Vector3 des_, IEntity* entity_) 
+DiscountPriceDecorator::DiscountPriceDecorator(IStrategy *strategy_, Vector3 pos_, Vector3 des_, IEntity* entity_)
   : PriceDecorator(strategy_, pos_, des_) {
       entity = entity_;
       std::cout << "Estimated price " << GetEstimatedPrice() << std::endl;
   }
 
-void StandardPriceDecorator::Move(IEntity* drone, double dt) {
+void DiscountPriceDecorator::Move(IEntity* drone, double dt) {
     double cost = price_per_sec * dt;
     Wallet* wallet = entity->GetWallet();
     std::cout << "Cost of move is " << cost << std::endl;
@@ -21,12 +21,12 @@ void StandardPriceDecorator::Move(IEntity* drone, double dt) {
     }
 }
 
-bool StandardPriceDecorator::IsCompleted() {
+bool DiscountPriceDecorator::IsCompleted() {
     bool completed = strategy->IsCompleted() || insufficientFunds;
     std::cout << "Completed " << completed << std::endl;
     return completed;
 }
 
-float StandardPriceDecorator::GetEstimatedPrice() {
-    return estimatedDistance * .015; // .0015
+float DiscountPriceDecorator::GetEstimatedPrice() {
+    return estimatedDistance * .075; // .0075
 }

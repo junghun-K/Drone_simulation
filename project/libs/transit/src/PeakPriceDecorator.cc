@@ -28,5 +28,5 @@ bool PeakPriceDecorator::IsCompleted() {
 }
 
 float PeakPriceDecorator::GetEstimatedPrice() {
-    return estimatedDistance * .003;
+    return estimatedDistance * .03; // .003
 }
