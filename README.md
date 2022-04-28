@@ -6,6 +6,6 @@
 
 ### Path to github: https://github.umn.edu/gramb025/shared-upstream/tree/lab11
 
-### Group memebers: gramb025(lab section), kimx5154(005), li001710(lab section)
+### Group memebers: gramb025(015), kimx5154(005), li001710(015)
 ### Names: Jared Grambihler, Jeonghoon Kim, Jackie Li
 # 
