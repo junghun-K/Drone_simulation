@@ -28,5 +28,5 @@ bool StandardPriceDecorator::IsCompleted() {
 }
 
 float StandardPriceDecorator::GetEstimatedPrice() {
-    return estimatedDistance * .0015;
+    return estimatedDistance * .015; // .0015
 }
