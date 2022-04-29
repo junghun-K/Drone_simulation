@@ -3,10 +3,10 @@
 [Link to Project Presentation](https://drive.google.com/file/d/1_1kJVIDksJP3i3QIZLYla0oM1itTRpBq/view?usp=sharing)
 
 ### 1. All the team member names and x500.
-Group memebers (Name - x500): 
-> Jared Grambihler - gramb025(015),  
-> Jeonghoon Kim - kimx5154(005),  
-> Jackie Li - li001710(015)  
+Group memebers (Name - x500 (lab section)): 
+> Jared Grambihler - gramb025 (015),  
+> Jeonghoon Kim - kimx5154 (005),  
+> Jackie Li - li001710 (015)  
 
 ### 2. Names and paths to the added files.
 1. Header Files: shared-upstream/project/libs/transit/include/**(.h file below)**  
