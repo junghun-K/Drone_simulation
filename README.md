@@ -1,11 +1,36 @@
-# shared-upstreambranch lab11
-## Through lab09, you created a repository on github. Use one team member’s repository to submit the code. Create a README.md which contains:
-1. All the team member names and x500.
-2. Names and paths to the added files.
-3. Sprint retrospective
+# shared-upstream branch lab11
+## Fee charging by the distance  
 
-### Path to github: https://github.umn.edu/gramb025/shared-upstream/tree/lab11
+### 1. All the team member names and x500.
+Group memebers (Name - x500): 
+> Jared Grambihler - gramb025(015),  
+> Jeonghoon Kim - kimx5154(005),  
+> Jackie Li - li001710(015)  
 
-### Group memebers: gramb025(015), kimx5154(005), li001710(015)
-### Names: Jared Grambihler, Jeonghoon Kim, Jackie Li
-# 
+### 2. Names and paths to the added files.
+Header Files:  
+shared-upstream/project/libs/transit/include/(.h file)  
+1. Wallet.h  
+2. PriceDecorator.h  
+3. StandardPriceDecorator.h  
+4. PeakPriceDecorator.h  
+5. DiscountDecorator.h  
+
+CPP files:  
+shared-upstream/project/libs/transit/src/(.cc file)
+1. Wallet.cc  
+2. PriceDecorator.cc  
+3. StandardPriceDecorator.cc  
+4. PeakPriceDecorator.cc  
+5. DiscountDecorator.cc  
+
+Modified (Existing) Files:
+1. Schedule.html (shared-upstream/project/apps/transit_service/web/schedule.html)
+2. RobotFactory.cc (shared-upstream/project/libs/transit/src/RobotFactory.cc)
+3. Drone.cc (shared-upstream/project/libs/transit/src/drone.cc)
+4. Entity.h (shared-upstream/project/libs/transit/include/entity.h)
+
+
+### 3. Sprint retrospective  
+
+
