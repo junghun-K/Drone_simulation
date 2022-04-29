@@ -10,7 +10,6 @@ Group memebers (Name - x500):
 ### 2. Names and paths to the added files.
 1. Header Files:  
 shared-upstream/project/libs/transit/include/**(.h file below)**
-  
 a. Wallet.h  
 b. PriceDecorator.h  
 c. StandardPriceDecorator.h  
@@ -19,7 +18,6 @@ e. DiscountDecorator.h
 
 2. CPP files:  
 shared-upstream/project/libs/transit/src/**(.cc file below)**
-  
 a. Wallet.cc  
 b. PriceDecorator.cc  
 c. StandardPriceDecorator.cc  
@@ -27,7 +25,6 @@ d. PeakPriceDecorator.cc
 e. DiscountDecorator.cc  
 
 3. Modified (Existing) Files:
-  
 a. Schedule.html (shared-upstream/project/apps/transit_service/web/schedule.html)
 b. RobotFactory.cc (shared-upstream/project/libs/transit/src/RobotFactory.cc)
 c. Drone.cc (shared-upstream/project/libs/transit/src/drone.cc)
