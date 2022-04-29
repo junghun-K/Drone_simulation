@@ -31,5 +31,7 @@ d. Entity.h (shared-upstream/project/libs/transit/include/entity.h)
 
 
 ### 3. Sprint retrospective  
+Since it was sprint project, it was not easy to get a response from group members immediately.
+However, we could manage all the requirements, and finished the tasks together by communicating one another via discord. Each of group members communicated/treated with respect, which leaded us to have better communication online while doing our own stuff. As a result, we could finish the project on time and was able to review what we have done. We also used the github as a means of sharing code. It was a great tool to review others'code and keep track of our history commits. Next time, it would be helpful to arrange our tasks with other tool that has nice interface, like Jira software. It would be better to see what we finshed and what tasks should be done by whom.
 
 
