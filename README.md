@@ -8,27 +8,30 @@ Group memebers (Name - x500):
 > Jackie Li - li001710(015)  
 
 ### 2. Names and paths to the added files.
-Header Files:  
-shared-upstream/project/libs/transit/include/**(.h file below)**  
-1. Wallet.h  
-2. PriceDecorator.h  
-3. StandardPriceDecorator.h  
-4. PeakPriceDecorator.h  
-5. DiscountDecorator.h  
+1. Header Files:  
+shared-upstream/project/libs/transit/include/**(.h file below)**
+  
+a. Wallet.h  
+b. PriceDecorator.h  
+c. StandardPriceDecorator.h  
+d. PeakPriceDecorator.h  
+e. DiscountDecorator.h  
 
-CPP files:  
+2. CPP files:  
 shared-upstream/project/libs/transit/src/**(.cc file below)**
-1. Wallet.cc  
-2. PriceDecorator.cc  
-3. StandardPriceDecorator.cc  
-4. PeakPriceDecorator.cc  
-5. DiscountDecorator.cc  
+  
+a. Wallet.cc  
+b. PriceDecorator.cc  
+c. StandardPriceDecorator.cc  
+d. PeakPriceDecorator.cc  
+e. DiscountDecorator.cc  
 
-Modified (Existing) Files:
-1. Schedule.html (shared-upstream/project/apps/transit_service/web/schedule.html)
-2. RobotFactory.cc (shared-upstream/project/libs/transit/src/RobotFactory.cc)
-3. Drone.cc (shared-upstream/project/libs/transit/src/drone.cc)
-4. Entity.h (shared-upstream/project/libs/transit/include/entity.h)
+3. Modified (Existing) Files:
+  
+a. Schedule.html (shared-upstream/project/apps/transit_service/web/schedule.html)
+b. RobotFactory.cc (shared-upstream/project/libs/transit/src/RobotFactory.cc)
+c. Drone.cc (shared-upstream/project/libs/transit/src/drone.cc)
+d. Entity.h (shared-upstream/project/libs/transit/include/entity.h)
 
 
 ### 3. Sprint retrospective  
