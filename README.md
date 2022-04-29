@@ -9,7 +9,7 @@ Group memebers (Name - x500):
 
 ### 2. Names and paths to the added files.
 Header Files:  
-shared-upstream/project/libs/transit/include/(.h file)  
+shared-upstream/project/libs/transit/include/**(.h file below)**  
 1. Wallet.h  
 2. PriceDecorator.h  
 3. StandardPriceDecorator.h  
@@ -17,7 +17,7 @@ shared-upstream/project/libs/transit/include/(.h file)
 5. DiscountDecorator.h  
 
 CPP files:  
-shared-upstream/project/libs/transit/src/(.cc file)
+shared-upstream/project/libs/transit/src/**(.cc file below)**
 1. Wallet.cc  
 2. PriceDecorator.cc  
 3. StandardPriceDecorator.cc  
