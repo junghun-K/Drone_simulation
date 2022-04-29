@@ -5,6 +5,28 @@
 
 [Link to Write Up](https://docs.google.com/document/d/1U0YlbX7V3meYLzmrIHIo4ARlTINmXkWd_YCy1-GAALQ)
 
+### Running the code
+
+The code can be run by the following commands after cloning the repository.
+
+From the root of the repository, change to the project directory
+```
+cd project/
+```
+
+Next, build the project using
+```
+make -j
+```
+
+Once the code has been compiled, use the command
+```
+build/bin/transit_service PORT_NUMBER apps/transit_service/web/
+```
+where PORT_NUMBER is the desired port to run on.
+
+Navigating to localhost:PORT_NUMBER and localhost:PORT_NUMBER/schedule.html in your browser while the app is running will let you schedule trips and view the drone and robots.
+
 ### 1. All the team members names and x500.
 Group members (Name - x500 (lab section)): 
 > Jared Grambihler - gramb025 (015),  
