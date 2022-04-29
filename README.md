@@ -1,5 +1,5 @@
 # shared-upstream branch lab11
-## Fee charging by the distance  
+## Fee charging by the distance - Used Decorator pattern.
 
 ### 1. All the team member names and x500.
 Group memebers (Name - x500): 
