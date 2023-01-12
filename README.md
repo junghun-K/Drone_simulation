@@ -1,4 +1,4 @@
-# Group Project
+# Drone Simulation Group Project
 ## Fee charging by the distance (Utilized Decorator pattern).
 [Link to Group Presentation](https://drive.google.com/file/d/1_1kJVIDksJP3i3QIZLYla0oM1itTRpBq/view?usp=sharing)
 
